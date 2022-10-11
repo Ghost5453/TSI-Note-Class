@@ -1,23 +1,44 @@
 public class Note {
 
-    int[] size = new int[2];
-    String message;
+    private float[] size = new float[2];
+    private float[][] spaceTakenUp = new float[2][2];
+    private String colour;
+    private String message;
+    private boolean fliped;
 
-    Note(int myX, int myY)
+    Note(float myX, float myY, String myColour)
     {
-        size[0] = myX;
-        size[1] = myY;
-        message ="";
+        this.size[0] = myX;
+        this.size[1] = myY;
+        this.colour = myColour;
+        this.message ="";
+        this.fliped = false;
     }
 
-    public void WriteOnNote(String myWrite)
+    public void WriteOnNote(String myWrite, float fontSize)
     {
+        char[] myCharArr = myWrite.toCharArray();
+        float xPointer, yPointer;
+
+        for (char myChar:myCharArr) {
+
+
+
+        }
+
         message += myWrite;
     }
 
-    public String ReadFromNote()
+    public void FlipNote()
+    {
+        fliped = !fliped;
+    }
+
+    public String ReadCurrentSize()
     {
         return message;
     }
+
+
 
 }
